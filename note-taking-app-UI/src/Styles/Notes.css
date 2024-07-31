@@ -1,0 +1,54 @@
+/* Styles for Notes component */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #2a2a2a;
+}
+
+.link {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: white;
+}
+
+.link:hover {
+    background-color: greenyellow;
+    color: white;
+}
+
+.link:focus {
+    outline: none;
+}
+
+.note-container {
+    margin-top: 20px;
+}
+
+.note {
+    background-color: black;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.note h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.note p {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #666;
+}

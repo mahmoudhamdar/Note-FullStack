@@ -1,0 +1,51 @@
+/* Styles for Note component */
+
+.note {
+    background-color: black;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.date {
+    font-size: 16px;
+    font-weight:bold ;
+    color: green;
+    margin-bottom: 8px;
+}
+
+.title {
+    width: 30%;
+
+
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color:navy;
+    margin-bottom: 8px;
+}
+
+.content {
+    font-size: 20px;
+    font-weight: bolder;
+    color: greenyellow;
+    line-height: 1.6;
+}
+
+
+
+.remove{
+    padding: 10px 20px;
+
+
+    border-radius: 4px;
+    color: white;
+    border: none;
+    font-size: 12px;
+    background-color: greenyellow;
+    cursor: pointer;
+}
+.remove:hover{
+    background-color: red;
+}

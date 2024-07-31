@@ -1,0 +1,59 @@
+/* Styles for NoteForm component */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: black;
+    border-radius: 8px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.submit {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+
+}
+.submit:hover {
+    background-color: #0056b3;
+
+}
+
+.submit:focus {
+    outline: none;
+}
+
+/* Optional: Adjust styles for form layout */
+form > * {
+    margin-bottom: 16px;
+}
+
+/* Optional: Add padding and background to the whole body */
+body {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    padding: 20px;
+    background-color: black;
+    height: 100vh;
+}
