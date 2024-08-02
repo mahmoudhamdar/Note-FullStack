@@ -32,9 +32,9 @@ export const Notes = () => {
         })
         setNotes(notes.filter((note)=>note.id!==id))
     }
-    const EditNote = (note) => {
+    const EditNote = (id) => {
         
-       navigate(`/EditNoteForm?note=${note}`)
+       navigate(`/EditNoteForm?id=${id}`)
 
     }
     return (

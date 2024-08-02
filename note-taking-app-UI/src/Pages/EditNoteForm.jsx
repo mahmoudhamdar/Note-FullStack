@@ -5,9 +5,7 @@ import axios from "axios";
 export const EditNoteForm=()=>{
     const url="http://localhost:5280"
    // const [searchParams, setSearchParams] = useSearchParams()
-    
   //  const [notes, setNotes] = useState([])
-    
   /*  useEffect(() => {
         axios.get(`${url}/api/NoteApi/`).then(
             response=>{
@@ -18,17 +16,23 @@ export const EditNoteForm=()=>{
 
     const location=useLocation()
     const queryParams=new URLSearchParams(location.search)
-    const  oldnoteid=queryParams.get(`note`)
+    const  oldnoteid=queryParams.get("id")
+    const [oldnote, setOldnote] = useState({})
+    useEffect(()=>{
+        axios.get(`${url}/api/NoteApi/${oldnoteid}`).then(response=>{
+            console.log(response.data)
+            setOldnote(response.data)
+        })
+    },[])
     //const oldnoteid=searchParams.get("id")
-    console.log(oldnoteid,"note")
+    console.log(oldnote,"note")
    // console.log(notes)
     //const oldnote=notes.filter((note)=>note.id===oldnoteid)
-    
    // console.log(oldnote)
     
     
-    const [newTitle, setNewTitle] = useState(oldnoteid.Title)
-    const [newContents, setNewContents] = useState(oldnoteid.Content)
+    const [newTitle, setNewTitle] = useState(oldnote.title)
+    const [newContents, setNewContents] = useState(oldnote.content)
     
     const navigate= useNavigate()
     const headers= {
@@ -37,8 +41,8 @@ export const EditNoteForm=()=>{
 const handleSubmit=(event)=>{
     event.preventDefault();
     const newNote = {
-        Title:String (TitleRef.current.value),
-        Content: String( ContentRef.current.value),
+        title:event.newTitle,
+        content:event.newContents,
         Date: new Date(),
         id:event.id
     };
@@ -54,15 +58,15 @@ const handleSubmit=(event)=>{
 return (
     <>
         <form onSubmit={(event)=>{handleSubmit(event)}} >
-            <input hidden value={oldnoteid.id}/>
+            <input hidden value={oldnote.id}/>
             <label>Title:</label>
-            <input  value={`${oldnoteid.Title}`}  type={"text"}  placeholder={"Enter Title"} onChange={(event)=>{
-                setNewTitle(event.target.value)
+            <input  value={newTitle}  type={"text"}  placeholder={"Enter Title"} onChange={(event)=>{
+                setNewTitle((title)=>title+String (event.target.value))
             }}/>
             <br/>
             <label>Content:</label>
-            <textarea  value={`${oldnoteid.Content}`}  placeholder={"Enter Content"} onChange={(event)=>{
-                setNewContents(event.target.value)}}/>
+            <textarea  value={newContents}  placeholder={"Enter Content"} onChange={(event)=>{
+                setNewContents((cont)=>cont+String (event.target.value))}}/>
             <br/>
 
             <button className={`submit`} type={"submit"}>Submit</button>
