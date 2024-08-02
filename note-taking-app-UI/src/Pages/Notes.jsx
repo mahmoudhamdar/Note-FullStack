@@ -8,7 +8,7 @@ import error from "eslint-plugin-react/lib/util/error.js";
 import {NotesContext} from "../NotesProvider.jsx";
 import {render} from "react-dom";
 export const Notes = () => {
-    const url="https://localhost:7068"
+    const url="http://localhost:5280"
     const [notes, setNotes] = useState([])
    
     const fetch=()=>{ axios.get(`${url}/api/NoteApi/`).then(
@@ -32,9 +32,9 @@ export const Notes = () => {
         })
         setNotes(notes.filter((note)=>note.id!==id))
     }
-    const EditNote = (id) => {
+    const EditNote = (note) => {
         
-       navigate(`/EditNoteForm`)
+       navigate(`/EditNoteForm?note=${note}`)
 
     }
     return (

@@ -82,7 +82,7 @@ public class NoteApi : ControllerBase
         return Ok(_notes);
     }
 
-    [HttpPut]
+    [HttpPut("{id}")]
     [ProducesResponseType(200)]
     [ProducesResponseType(400)]
     [ProducesResponseType(404)]

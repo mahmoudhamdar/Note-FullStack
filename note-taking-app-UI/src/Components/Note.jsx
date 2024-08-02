@@ -17,7 +17,7 @@ export const Note = ({note,Remove,Edit}) => {
                 }}>Remove
                 </button>
                 <button className={`edit`} onClick={() => {
-                    Edit(note.id);
+                    Edit(note);
                 }}>Edit
                 </button>
             </div>

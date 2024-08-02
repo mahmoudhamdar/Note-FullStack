@@ -428,26 +428,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\abbas\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\abbas\\RiderProjects\\Note-Taking-App\\Note-Taking-App\\Note-Taking-App.csproj",
+      "projectUniqueName": "C:\\Users\\User\\RiderProjects\\Note-FullStack\\Note-Taking-App\\Note-Taking-App.csproj",
       "projectName": "Note-Taking-App",
-      "projectPath": "C:\\Users\\abbas\\RiderProjects\\Note-Taking-App\\Note-Taking-App\\Note-Taking-App.csproj",
-      "packagesPath": "C:\\Users\\abbas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\abbas\\RiderProjects\\Note-Taking-App\\Note-Taking-App\\obj\\",
+      "projectPath": "C:\\Users\\User\\RiderProjects\\Note-FullStack\\Note-Taking-App\\Note-Taking-App.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\RiderProjects\\Note-FullStack\\Note-Taking-App\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\abbas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -490,7 +488,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
