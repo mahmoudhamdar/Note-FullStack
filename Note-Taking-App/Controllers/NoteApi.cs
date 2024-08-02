@@ -6,7 +6,10 @@ namespace Note_Taking_App.Controllers;
 [ApiController]
 public class NoteApi : ControllerBase
 {
-    public List<Note> _notes = new()
+  
+
+    
+    public static List<Note> _notes = new()
     {
         new Note()
         {
@@ -27,7 +30,7 @@ public class NoteApi : ControllerBase
             Id = 3,
             Title = "wjijewif",
             Content = "jf9wjfiqw",
-            Date =DateTime.MaxValue 
+            Date =DateTime.MaxValue
         }
     };
     
@@ -83,7 +86,7 @@ public class NoteApi : ControllerBase
     [ProducesResponseType(200)]
     [ProducesResponseType(400)]
     [ProducesResponseType(404)]
-    public IActionResult put(int id, [FromBody] Note note)
+    public IActionResult Put(int id, [FromBody] Note note)
     {
         if (id<1)
         {
@@ -108,7 +111,7 @@ public class NoteApi : ControllerBase
 
         return NotFound();
     }
-    [HttpDelete]
+    [HttpDelete("{id}")]
     [ProducesResponseType(200)]
     [ProducesResponseType(400)]
     [ProducesResponseType(404)]
@@ -127,7 +130,7 @@ public class NoteApi : ControllerBase
 
         _notes.Remove(note);
 
-        return NotFound();
+        return Ok(_notes);
     }
     
     

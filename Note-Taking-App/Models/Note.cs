@@ -9,3 +9,4 @@ public class Note
     public string Content { get; set; }
     public DateTime Date { get; set; }
 }
+//.toString().slice(0,25)

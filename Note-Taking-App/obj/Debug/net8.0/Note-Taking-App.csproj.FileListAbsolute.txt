@@ -30,3 +30,4 @@ C:\Users\abbas\RiderProjects\Note-Taking-App\Note-Taking-App\obj\Debug\net8.0\re
 C:\Users\abbas\RiderProjects\Note-Taking-App\Note-Taking-App\obj\Debug\net8.0\Note-Taking-App.pdb
 C:\Users\abbas\RiderProjects\Note-Taking-App\Note-Taking-App\obj\Debug\net8.0\Note-Taking-App.genruntimeconfig.cache
 C:\Users\abbas\RiderProjects\Note-Taking-App\Note-Taking-App\obj\Debug\net8.0\ref\Note-Taking-App.dll
+C:\Users\abbas\RiderProjects\Note-Taking-App\Note-Taking-App\obj\Debug\net8.0\Note-Taking-App.sourcelink.json

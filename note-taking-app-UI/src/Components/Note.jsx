@@ -1,20 +1,25 @@
 
 import "../Styles/Note.css"
 
-export const Note = ({note,Remove}) => {
+export const Note = ({note,Remove,Edit}) => {
 
 
 
     return (
         <>
         <div className=" note">
-            <div className="date"> Date:{note.date}</div>
+            <div className="date"> Date:{String(note.date).slice(0,25)}</div>
             <div className="title">Title:{note.title}</div>
             <div className="content">{note.content}</div>
-            <div >
-                <button className={`remove`} onClick={()=>{
+            <div>
+                <button className={`remove`} onClick={() => {
                     Remove(note.id);
-                }}>Remove</button>
+                }}>Remove
+                </button>
+                <button className={`edit`} onClick={() => {
+                    Edit(note.id);
+                }}>Edit
+                </button>
             </div>
         </div>
 

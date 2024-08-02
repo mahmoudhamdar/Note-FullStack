@@ -4,13 +4,13 @@ import {createContext, useState} from "react";
 export const NotesContext= createContext(null)
 
     export const NotesProvider = ({children}) => {
-        const [Notes, setNotes] = useState([])
+        const [fetchorNO, setfetchorNO] = useState(false)
 
 
 
         return (
-            <NotesContext.Provider value={{Notes: Notes,
-               setNotes: setNotes}}>
+            <NotesContext.Provider value={{fetchorNO: fetchorNO,
+                setfetchorNO: setfetchorNO}}>
 
 
                 {children}
