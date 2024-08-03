@@ -52,19 +52,28 @@ const handleSubmit=(event)=>{
 }
 return (
     <>
-        <form onSubmit={(event)=>{handleSubmit(event)}} >
+        <form onSubmit={(event) => {
+            handleSubmit(event)
+        }}>
             <input hidden value={oldnote.id}/>
             <label>Title:</label>
-            <input  value={newTitle}  type={"text"}  placeholder={"Enter Title"} onChange={(event)=>{
-                setNewTitle((title)=>String (event.target.value))
+            <input value={newTitle} type={"text"} placeholder={"Enter Title"} onChange={(event) => {
+                setNewTitle((title) => String(event.target.value))
             }}/>
             <br/>
             <label>Content:</label>
-            <textarea  value={newContents}  placeholder={"Enter Content"} onChange={(event)=>{
-                setNewContents((cont)=>String (event.target.value))}}/>
+            <textarea value={newContents} placeholder={"Enter Content"} onChange={(event) => {
+                setNewContents((cont) => String(event.target.value))
+            }}/>
             <br/>
 
             <button className={`submit`} type={"submit"}>Submit</button>
+            <button className={"back"} onClick={(e) => {
+                e.preventDefault()
+                navigate(-1)
+            }}>Back
+            </button>
         </form>
     </>
-)}
+)
+}

@@ -41,6 +41,10 @@ export const NoteForm = () => {
             <br/>
             
             <button className={`submit`} type={"submit"}>Submit</button>
+            <button className={"back"} onClick={(e)=> {
+                e.preventDefault()
+                navigate(-1)
+            }}>Back</button>    
             </form>
         </>
     )
