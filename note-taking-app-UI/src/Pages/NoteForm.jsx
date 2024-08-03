@@ -22,7 +22,7 @@ export const NoteForm = () => {
             id: Math.floor(Math.random() * 1000)
         };
         console.log(newNote)
-        const url="https://localhost:7068"
+        const url="http://localhost:5280"
        axios.post(`${url}/api/NoteApi`,newNote,{headers})
             .then(response=>{console.log(response.data)})
             .catch(error=>console.error(error))

@@ -3,7 +3,7 @@ import {useLocation, useNavigate, useSearchParams} from "react-router-dom";
 import axios from "axios";
 
 export const EditNoteForm=()=>{
-    const url="https://localhost:7068"
+    const url="http://localhost:5280"
   
 
     const location=useLocation()

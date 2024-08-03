@@ -6,7 +6,7 @@ import "../Styles/Notes.css"
 import axios from 'axios'
 
 export const Notes = () => {
-    const url="https://localhost:7068"
+    const url="http://localhost:5280"
     const [notes, setNotes] = useState([])
    
     const fetch=()=>{ axios.get(`${url}/api/NoteApi/`).then(

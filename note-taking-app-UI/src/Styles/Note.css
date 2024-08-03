@@ -37,15 +37,24 @@
 
 .remove{
     padding: 10px 20px;
-
-
+    border-radius: 4px;
+    color: white;
+    border: none;
+    font-size: 12px;
+    background-color: brown;
+    cursor: pointer;
+}
+.remove:hover{
+    background-color: red;
+}
+.edit{
+    padding: 10px 20px;
     border-radius: 4px;
     color: white;
     border: none;
     font-size: 12px;
     background-color: greenyellow;
     cursor: pointer;
-}
-.remove:hover{
-    background-color: red;
-}
+}.edit:hover{
+     background-color: blue;
+ }
