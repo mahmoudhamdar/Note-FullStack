@@ -1,9 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using Note_Taking_App.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-
+builder.Services.AddDbContext<Context>(
+    options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",

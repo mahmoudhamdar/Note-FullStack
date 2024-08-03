@@ -4,11 +4,9 @@ import {useContext, useEffect, useState} from "react";
 import {Note} from "../Components/Note.jsx";
 import "../Styles/Notes.css"
 import axios from 'axios'
-import error from "eslint-plugin-react/lib/util/error.js";
-import {NotesContext} from "../NotesProvider.jsx";
-import {render} from "react-dom";
+
 export const Notes = () => {
-    const url="http://localhost:5280"
+    const url="https://localhost:7068"
     const [notes, setNotes] = useState([])
    
     const fetch=()=>{ axios.get(`${url}/api/NoteApi/`).then(

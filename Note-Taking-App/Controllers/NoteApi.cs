@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Note_Taking_App.Data;
 using Note_Taking_App.Models;
 
 namespace Note_Taking_App.Controllers;
@@ -6,33 +8,12 @@ namespace Note_Taking_App.Controllers;
 [ApiController]
 public class NoteApi : ControllerBase
 {
-  
-
+    private readonly Context _context;
     
-    public static List<Note> _notes = new()
+    public NoteApi(Context context)
     {
-        new Note()
-        {
-            Id = 1,
-            Title = "grocery",
-            Content = "Milk,Bread,Chicken,Juice",
-            Date = DateTime.Today
-        },
-        new Note()
-        {
-            Id = 2,
-            Title = "vhudhuwf",
-            Content = "hjwoivhjcwifj",
-            Date = DateTime.Now
-        },
-        new Note()
-        {
-            Id = 3,
-            Title = "wjijewif",
-            Content = "jf9wjfiqw",
-            Date =DateTime.MaxValue
-        }
-    };
+        _context = context;
+    }
     
     [HttpGet]
     [ProducesResponseType(200)]
@@ -40,7 +21,7 @@ public class NoteApi : ControllerBase
     [ProducesResponseType(404)]
     public ActionResult<Note> GetAllNotes()
     {
-        return Ok(_notes);
+        return Ok(_context.Notes);
     }
 
     [HttpGet("{id:int}")]
@@ -54,7 +35,7 @@ public class NoteApi : ControllerBase
             return NotFound();
         }
 
-        Note note = _notes.FirstOrDefault(n => n.Id == id);
+        Note note = _context.Notes.FirstOrDefault(n => n.Id == id);
         if (note==null)
         {
             return BadRequest();
@@ -78,8 +59,9 @@ public class NoteApi : ControllerBase
         {
             return BadRequest();
         }
-        _notes.Add(note);
-        return Ok(_notes);
+        _context.Notes.Add(note);
+        _context.SaveChanges();
+        return Ok(_context.Notes);
     }
 
     [HttpPut("{id}")]
@@ -98,18 +80,18 @@ public class NoteApi : ControllerBase
             return BadRequest();
         }
 
-        foreach (var varNote in _notes)
+        var existingNote = _context.Notes.FirstOrDefault(n => n.Id == id);
+
+        if (existingNote == null)
         {
-            if (varNote.Id==id)
-            {
-                varNote.Content = note.Content;
-                varNote.Date = note.Date;
-                varNote.Title = note.Title;
-                return Ok(_notes);
-            }
+            return NotFound();
         }
 
-        return NotFound();
+        existingNote.Content = note.Content;
+        existingNote.Date = note.Date;
+        existingNote.Title = note.Title;
+        _context.SaveChanges();
+        return Ok(_context.Notes);
     }
     [HttpDelete("{id}")]
     [ProducesResponseType(200)]
@@ -122,15 +104,15 @@ public class NoteApi : ControllerBase
             return NotFound();
         }
 
-        Note note = _notes.FirstOrDefault(n => n.Id == id);
+        Note note = _context.Notes.FirstOrDefault(n => n.Id == id);
         if (note==null)
         {
             return BadRequest();
         }
 
-        _notes.Remove(note);
-
-        return Ok(_notes);
+        _context.Notes.Remove(note);
+        _context.SaveChanges();
+        return Ok(_context.Notes);
     }
     
     
