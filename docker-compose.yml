@@ -1,0 +1,6 @@
+﻿services:
+  note-taking-app:
+    image: note-taking-app
+    build:
+      context: .
+      dockerfile: Note-Taking-App/Dockerfile
